@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="website description" />
+    <meta name="keywords" content="website keywords, website keywords" />
+    {% block style %}{% endblock %}
+</head>
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="/">Travel<span class="logo_colour">Guide</span></a></h1>
+          <h2>Broaden Your Horizons - Be Yourself</h2>
+        </div>
+      </div>
+    {% block menu %}    {% endblock %}
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          {% block sidebar_item %}
+          {% endblock %}
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+      </div>
+      {% block body_content %}    {% endblock %}
+    </div>
+    {% block footer %}    {% endblock %}
+  </div>
+</body>
+</html>
