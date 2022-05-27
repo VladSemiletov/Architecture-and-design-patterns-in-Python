@@ -1,7 +1,5 @@
 import json
 from quopri import decodestring
-from typing import Dict, Any
-
 from simple_framework.requests import GetRequests, PostRequests
 
 
@@ -34,7 +32,10 @@ class Framework:
         if method == 'POST':
             data = PostRequests().get_request_params(environ)
             request['data'] = Framework.decode_value(data)
-            print(f'Нам пришёл post-запрос: {Framework.decode_value(data)}')
+            data_str = Framework.decode_value(data)
+            with open("post_request_data.txt", "w", encoding="utf-8") as f:
+                json.dump(data_str, f)
+
 
         if method == 'GET':
             request_params = GetRequests().get_request_params(environ)
