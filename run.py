@@ -1,5 +1,5 @@
 from wsgiref.simple_server import make_server
-from simple_framework.main import Framework
+from simple_edu_framework.main import Framework
 from urls import routes, fronts
 
 
