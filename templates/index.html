@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-	Home
+Homepage
 {% endblock %}
 {% block style %}
 	{% include "inc-style.html" %}
@@ -8,11 +8,30 @@
 {% block menu %}
 	{% include "inc-menu.html" %}
 {% endblock %}
-{% block sidebar_item %}
-	{% include "inc-index-sidebar-item.html" %}
-{% endblock %}
 {% block body_content %}
-	{% include "inc-index-body.html" %}
+	<div>
+		<a href="/create-category/">Create New Category</a>
+	</div>
+	<div>
+		<h1>Active Categories List</h1>
+        {% for item in objects_list %}
+        <li>
+            {{item.name}} <span>Number of Classes: {{item.course_count()}}</span>
+			<a href="/courses-list/?id={{item.id}}">Show Classes</a>
+        </li>
+        {% endfor %}
+	</div>
+    <div>
+		<li>
+			<a href="/student-list/">Students List</a>
+		</li>
+		<li>
+			<a href="/create-student/">Create Student</a>
+		</li>
+		<li>
+			<a href="/add-student/">Add New Student on Class</a>
+		</li>
+	</div>
 {% endblock %}
 {% block footer %}
 	{% include "inc-footer.html" %}
