@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+Dance Classes List
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body_content %}
+    <div>
+        <a href="/">Back to Home</a>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <a href="/create-course/?id={{id}}">Create New Class</a>
+        <br>
+        <h1>Class List Of The Category"{{name}}"</h1>
+        {% for item in objects_list %}
+        <li>
+            {{item.name}} <span><a href="/copy-course/?name={{item.name}}">Copy</a></span>
+        </li>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block footer %}
+	{% include "inc-footer.html" %}
+{% endblock %}
