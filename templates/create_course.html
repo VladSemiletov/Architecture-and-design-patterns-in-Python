@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+Creating New Dance Class
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body_content %}
+    <div>
+        <a href="/courses-list/?id={{id}}">Back</a>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <h1>Creating Classes for Category"{{name}}"</h1>
+        <form method="post">
+            <input type="text" name="name" placeholder="Name">
+            <button type="submit">Save and Return To Categories List</button>
+        </form>
+    </div>
+{% endblock %}
+{% block footer %}
+	{% include "inc-footer.html" %}
+{% endblock %}

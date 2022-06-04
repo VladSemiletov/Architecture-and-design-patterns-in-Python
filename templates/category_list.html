@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}
+Dance Classes List
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body_content %}
+    <a href="/">Back</a>
+
+    <h1>Categories List</h1>
+    <ul>
+
+        {% for item in objects_list %}
+        <li>
+            {{item.name}} <span>Number of Dance Classes: {{item.course_count()}}</span>
+        </li>
+        {% endfor %}
+    </ul>
+
+	<div>
+		<li><a href="/courses-list/">Dance Classes List</a></li>
+		<li><a href="/create-course/"> Create Dance Class</a></li>
+	</div>
+{% endblock %}
+{% block footer %}
+	{% include "inc-footer.html" %}
+{% endblock %}

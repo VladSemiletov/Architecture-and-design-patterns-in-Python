@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+Student Creating
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body_content %}
+	<div>
+		<li>
+			<a href="/create-student/">Create Student</a>
+		</li>
+		<li>
+			<a href="/add-student/">Add New Student on Class</a>
+		</li>
+	</div>
+    <h1>Students List</h1>
+    <div>
+
+        {% for item in objects_list %}
+        <li>
+            {{item.name}}
+            {% for course in item.courses %}
+                {{course.name}}
+            {% endfor %}
+        </li>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block footer %}
+	{% include "inc-footer.html" %}
+{% endblock %}
